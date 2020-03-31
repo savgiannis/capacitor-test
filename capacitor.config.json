@@ -1,0 +1,8 @@
+{
+  "appId": "com.test.capacitor",
+  "appName": "Test Capacitor",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "dist/capacitor-test",
+  "cordova": {}
+}

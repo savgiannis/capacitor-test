@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Plugins } from '@capacitor/core';
+
+const { Browser } = Plugins;
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'capacitor-test';
+
+
+  async openBrowser() {
+    await Browser.open({ url: 'https://www.google.com/' });
+
+    setTimeout(() => {
+      Browser.close();
+    }, 5000);
+
+    Browser.addListener('browserFinished', () => {
+      alert('Browser closed.')
+    })
+  }
 }
